@@ -1,0 +1,24 @@
+﻿<div class="container" >
+    <div style="margin-left: 0%; width: 30%; height: 100%; float: left; padding-top: 10%">
+      <img src="../../assets/login/lock.png" width="300" height="300" alt="Generic placeholder thumbnail" (load)="toggleFlip()" [@flipState]="flip" (close)="toggleFlip()">
+    </div>
+    <div class="container" style="float: left; width: 70%; height: 100%; padding-top: 25%" [@enter]>
+        <div class="container">       
+            <input class="form-control" type="email" #email style="width: 260px;" placeholder="email" />
+        </div>
+      <br/>
+        <div class="container">     
+            <input class="form-control" type="password" #pass style="width: 260px;" placeholder="haslo" />
+        </div>
+      <br />
+        <div class="container">
+            <div style="margin-left: 0%; text-align: left">
+              <input class="btn btn-default" type="submit" style="width: 130px;" (click)="login(email.value, pass.value)" />
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+
+
