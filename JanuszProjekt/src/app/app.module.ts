@@ -39,8 +39,9 @@ import { StatisticsComponent } from './statistics/statistics.component';
           { path: '', redirectTo: 'login', pathMatch: 'full' },
           { path: 'home', component: HomeComponent, canActivate:[AuthService]},
           { path: 'data-view', component: DataViewComponent, canActivate: [AuthService] },
+          { path:'statistics', component:StatisticsComponent },
           { path: 'login', component: LoginComponent },
-          {path:'logout', component: LogoutComponent}
+          { path:'logout', component: LogoutComponent}
 
           
       ])

@@ -1,3 +1,57 @@
-<p>
-  statistics works!
-</p>
+﻿<app-dashboard></app-dashboard>
+<h2>STATYSTYKA PRACY KOLUMNY DESTYLACYJNEJ I REKTYFIKACYJNEJ</h2>
+  <h3 style="text-align:center">Statystyka całościowa:</h3>
+<div>
+  <!--<div style="width:220px; height:320px; float:left"></div>-->
+  <div style="float:left">
+    <p *ngIf="!tableStat"><em>Loading...</em></p>
+    <div id="statystykaKolumny" class="container" style="height: 250px; margin-left:10px;">
+
+      <table class="table" *ngIf="tableStat">
+        <thead style="background-color: lightgray">
+          <tr>
+            <th style="text-align:center">PARAMETR</th>
+            <th style="text-align:center">ŚREDNIA</th>
+            <th style="text-align:center">MINIMUM</th>
+            <th style="text-align:center">MAKSIMUM</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let stat of tableStat">
+
+          <tr>
+            <td><b>METANOL</b></td>
+            <td style="color: brown; font-weight: bold">{{stat.metanol_avg | number : '1.2-2'}} %</td>
+            <td style="color: brown; font-weight: bold">{{stat.metanol_min | number : '1.2-2'}} %</td>
+            <td style="color: brown; font-weight: bold">{{stat.metanol_max | number : '1.2-2'}} %</td>
+          </tr>
+
+          <tr>
+            <td><b>KOLUMNA DESTYLACYJNA</b></td>
+            <td>{{stat.tempDestyl_avg | number : '1.2-2'}}&deg;C </td>
+            <td>{{stat.tempDestyl_min | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempDestyl_max | number : '1.2-2'}}&deg;C</td>
+          </tr>
+          <tr>
+            <td><b>KOLUMNA REKTYFIKACYJNA - DÓŁ</b></td>
+            <td>{{stat.tempRektDol_avg | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempRektDol_min | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempRektDol_max | number : '1.2-2'}}&deg;C</td>
+          </tr>
+          <tr>
+            <td><b>KOLUMNA REKTYFIKACYJNA - GÓRA</b></td>
+            <td>{{stat.tempRektGora_avg | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempRektGora_min | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempRektGora_max | number : '1.2-2'}}&deg;C</td>
+          </tr>
+          <tr>
+            <td><b>SKRAPLACZ</b></td>
+            <td>{{stat.tempSkraplacz_avg | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempSkraplacz_min | number : '1.2-2'}}&deg;C</td>
+            <td>{{stat.tempSkraplacz_max | number : '1.2-2'}}&deg;C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
