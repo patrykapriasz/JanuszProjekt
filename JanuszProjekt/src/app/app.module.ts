@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './logout/logout.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LogoutComponent } from './logout/logout.component';
     DataViewComponent,
     DashboardComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    StatisticsComponent
   ],
   imports: [
       BrowserModule,
