@@ -28,6 +28,7 @@ namespace JanuszProjekt
             services.AddScoped<IColumns, ColumnsRepository>();
             services.AddScoped<IProduction, ProductionRepository>();
             services.AddScoped<IUser, UserRepository>();
+            services.AddScoped<IStatistic, StatisticsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
