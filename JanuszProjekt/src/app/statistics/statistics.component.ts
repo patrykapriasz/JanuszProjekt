@@ -13,6 +13,7 @@ export class StatisticsComponent implements OnInit {
     constructor(private _service: StatisticsService) { }
 
     public tableStat: Istatistics[];
+    public periodStat:Istatistics[];
 
     private startDate: Date;
     private endDate: Date;
@@ -20,6 +21,15 @@ export class StatisticsComponent implements OnInit {
 
     getStat() {
         this._service.getStatGeneral().subscribe(res => this.tableStat = res);
+    }
+
+    getDayStat(day: Date) {
+        this._service.getStatDay(day).subscribe(res => this.periodStat = res);
+    }
+
+    getPeriodStat(day1: Date, day2: Date) {
+        this.checkNull(day1, day2);
+        this._service.getStatPeriod(this.startDate, this.endDate).subscribe(res => this.periodStat = res);
     }
 
     checkNull(item: Date, item2: Date) {
