@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 import { LoginService } from '../services/login.service';
-//import { CookieService} from 'angular2-cookie/core';
+
 
 @
 Component({
