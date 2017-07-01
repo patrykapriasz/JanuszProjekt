@@ -42,7 +42,7 @@ Component({
             })),
             transition('void=>*', [
             style({
-                transform:'translateX(150%)'
+                transform:'translateX(90%)'
             }), animate(900)])
         ])
 
