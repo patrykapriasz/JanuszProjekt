@@ -13,10 +13,11 @@ import { DataViewComponent } from './data-view/data-view.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+//import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './logout/logout.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { CookieModule } from 'ngx-cookie';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
   ],
   imports: [
       BrowserModule,
+      CookieModule.forRoot(),
       HttpModule,
       BrowserAnimationsModule,
       RouterModule.forRoot([
@@ -46,7 +48,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
           
       ])
   ],
-  providers: [CookieService, AuthService],
+  providers: [ AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,9 @@
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+//import { CookieService } from 'angular2-cookie/core';
+
+import { CookieService } from 'ngx-cookie';
 import 'rxjs/Rx';
 
 @Injectable()
