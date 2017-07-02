@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\PublishProfiles\produkcjapatryk.pl - Web Deploy.pubxml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="src\app\interfaces\" />
     <Folder Include="src\app\services\" />
     <Folder Include="wwwroot\" />
