@@ -1,19 +1,21 @@
 ﻿<app-dashboard></app-dashboard>
 <h2>STATYSTYKA PRACY KOLUMNY DESTYLACYJNEJ I REKTYFIKACYJNEJ</h2>
-  <h3 style="text-align:center">Statystyka całościowa:</h3>
-<div class="container">
+  
+<div class="container" style="margin-left: 10px;">
+  <h3>Statystyka całościowa:</h3>
     <!--<div style="width:220px; height:320px; float:left"></div>-->
-    <div style="float:left">
-        <p *ngIf="!tableStat"><em>Loading...</em></p>
-        <div id="statystykaKolumny" class="container" style="height: 250px; margin-left:10px;">
+    <div style="float: left">
+        <p *ngIf="!tableStat"><em>Loading...</em>
+        </p>
+        <div id="statystykaKolumny" class="container" style="height: 250px; margin-left: 10px;">
 
             <table class="table" *ngIf="tableStat">
                 <thead>
                 <tr>
-                    <th style="text-align:center">PARAMETR</th>
-                    <th style="text-align:center">ŚREDNIA</th>
-                    <th style="text-align:center">MINIMUM</th>
-                    <th style="text-align:center">MAKSIMUM</th>
+                    <th style="text-align: center">PARAMETR</th>
+                    <th style="text-align: center">ŚREDNIA</th>
+                    <th style="text-align: center">MINIMUM</th>
+                    <th style="text-align: center">MAKSIMUM</th>
                 </tr>
                 </thead>
                 <tbody *ngFor="let stat of tableStat">
@@ -54,7 +56,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" style="margin-left: 10px;">
   <h3>Statystyka częściowa: </h3>
   <div class="container" id="statystykaPrzedzial" style="height: 250px;">
       <nav class="navbar navbar-default" role="navigation" style="width: 1200px; padding-top: 7px; padding-left: 10px;">
