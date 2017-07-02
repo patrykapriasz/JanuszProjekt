@@ -1,13 +1,14 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
-import {LoginService} from '../services/login.service';
+import { LoginService } from '../services/login.service';
+
 
 @
 Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    providers:[LoginService],
+    providers: [LoginService],
     animations: [
         trigger('flipState',
         [
@@ -42,7 +43,7 @@ Component({
             })),
             transition('void=>*', [
             style({
-                transform:'translateX(150%)'
+                transform:'translateX(90%)'
             }), animate(900)])
         ])
 

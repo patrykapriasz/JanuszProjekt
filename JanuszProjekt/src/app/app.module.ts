@@ -13,9 +13,11 @@ import { DataViewComponent } from './data-view/data-view.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+
 import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './logout/logout.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { CookieModule } from 'ngx-cookie';
 
 
 @NgModule({
@@ -27,23 +29,26 @@ import { LogoutComponent } from './logout/logout.component';
     DataViewComponent,
     DashboardComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    StatisticsComponent
   ],
   imports: [
       BrowserModule,
+      CookieModule.forRoot(),
       HttpModule,
       BrowserAnimationsModule,
       RouterModule.forRoot([
           { path: '', redirectTo: 'login', pathMatch: 'full' },
           { path: 'home', component: HomeComponent, canActivate:[AuthService]},
           { path: 'data-view', component: DataViewComponent, canActivate: [AuthService] },
+          { path:'statistics', component:StatisticsComponent, canActivate:[AuthService] },
           { path: 'login', component: LoginComponent },
-          {path:'logout', component: LogoutComponent}
+          { path:'logout', component: LogoutComponent}
 
           
       ])
   ],
-  providers: [CookieService, AuthService],
+  providers: [ AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

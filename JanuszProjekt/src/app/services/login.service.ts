@@ -2,7 +2,9 @@
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+//import { CookieService } from 'angular2-cookie/core';
+
+import { CookieService } from 'ngx-cookie';
 import 'rxjs/Rx';
 
 @Injectable()
@@ -19,7 +21,8 @@ export class LoginService {
         return this._http.post(this.url, JSON.stringify({ 'UserEmail': email, 'UserPassword': pass }), options)
             .map(this.myData).subscribe(res => {
             this.loginStatus = res;
-                this.checkCookie();;
+            this.checkCookie();
+            
 
             });
 
@@ -32,7 +35,7 @@ export class LoginService {
     }
 
     checkCookie() {
-        if (this.loginStatus) {
+        if (this.loginStatus == true) {
             this.cookie.put("userAuth", 'true');
             this.redirect();
         }

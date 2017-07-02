@@ -23,7 +23,8 @@ namespace JanuszProjekt.controllers
         [HttpPost("[action]")]
         public bool loginToApp([FromBody] User user)
         {
-            return _repository.login(user.UserEmail, user.UserPassword);
+            var x= _repository.login(user.UserEmail, user.UserPassword);
+            return x;
         }
 
   }

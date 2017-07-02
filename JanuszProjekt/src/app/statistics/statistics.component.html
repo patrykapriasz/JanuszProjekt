@@ -1,0 +1,123 @@
+﻿<app-dashboard></app-dashboard>
+<h2>STATYSTYKA PRACY KOLUMNY DESTYLACYJNEJ I REKTYFIKACYJNEJ</h2>
+  <h3 style="text-align:center">Statystyka całościowa:</h3>
+<div class="container">
+    <!--<div style="width:220px; height:320px; float:left"></div>-->
+    <div style="float:left">
+        <p *ngIf="!tableStat"><em>Loading...</em></p>
+        <div id="statystykaKolumny" class="container" style="height: 250px; margin-left:10px;">
+
+            <table class="table" *ngIf="tableStat">
+                <thead>
+                <tr>
+                    <th style="text-align:center">PARAMETR</th>
+                    <th style="text-align:center">ŚREDNIA</th>
+                    <th style="text-align:center">MINIMUM</th>
+                    <th style="text-align:center">MAKSIMUM</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let stat of tableStat">
+
+                <tr>
+                    <td><b>METANOL</b></td>
+                    <td style="color: brown; font-weight: bold">{{stat.metanol_avg | number : '1.2-2'}} %</td>
+                    <td style="color: brown; font-weight: bold">{{stat.metanol_min | number : '1.2-2'}} %</td>
+                    <td style="color: brown; font-weight: bold">{{stat.metanol_max | number : '1.2-2'}} %</td>
+                </tr>
+
+                <tr>
+                    <td><b>KOLUMNA DESTYLACYJNA</b></td>
+                    <td>{{stat.tempDestyl_avg | number : '1.2-2'}}&deg;C </td>
+                    <td>{{stat.tempDestyl_min | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempDestyl_max | number : '1.2-2'}}&deg;C</td>
+                </tr>
+                <tr>
+                    <td><b>KOLUMNA REKTYFIKACYJNA - DÓŁ</b></td>
+                    <td>{{stat.tempRektDol_avg | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempRektDol_min | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempRektDol_max | number : '1.2-2'}}&deg;C</td>
+                </tr>
+                <tr>
+                    <td><b>KOLUMNA REKTYFIKACYJNA - GÓRA</b></td>
+                    <td>{{stat.tempRektGora_avg | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempRektGora_min | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempRektGora_max | number : '1.2-2'}}&deg;C</td>
+                </tr>
+                <tr>
+                    <td><b>SKRAPLACZ</b></td>
+                    <td>{{stat.tempSkraplacz_avg | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempSkraplacz_min | number : '1.2-2'}}&deg;C</td>
+                    <td>{{stat.tempSkraplacz_max | number : '1.2-2'}}&deg;C</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+  <h3>Statystyka częściowa: </h3>
+  <div class="container" id="statystykaPrzedzial" style="height: 250px;">
+      <nav class="navbar navbar-default" role="navigation" style="width: 1200px; padding-top: 7px; padding-left: 10px;">
+          <div style="float: left; padding-top: 8px">
+              <label>Start: </label>
+          </div>
+          <div style="float: left">
+              <input type="date" #startFiltr class="form-control" style="width: 160px; border-left: 5px solid green" (change)="getDayStat(startFiltr.value)" />
+          </div>
+          <div style="float: left; padding-top: 8px; padding-left: 10px;">
+              <label>Koniec: </label>
+          </div>
+          <div style="float: left; margin-left: 5px"> 
+              <input type="date" #koniecFiltr class="form-control" style="width: 160px; border-left: 5px solid green" (change)="getPeriodStat(startFiltr.value,koniecFiltr.value)" />
+          </div>
+      </nav>
+
+
+      <div id="tableContainer" class="container">
+        <table class="table" *ngIf="periodStat">
+          <thead>
+            <tr>
+              <th style="text-align:center">PARAMETR</th>
+              <th style="text-align:center">ŚREDNIA</th>
+              <th style="text-align:center">MINIMUM</th>
+              <th style="text-align:center">MAKSIMUM</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let statD of periodStat">
+            <tr>
+              <td><b>METANOL</b></td>
+              <td style="color: brown; font-weight: bold">{{statD.metanol_avg | number : '1.2-2'}} %</td>
+              <td style="color: brown; font-weight: bold">{{statD.metanol_min | number : '1.2-2'}} %</td>
+              <td style="color: brown; font-weight: bold">{{statD.metanol_max | number : '1.2-2'}} %</td>
+            </tr>
+
+            <tr>
+              <td><b>KOLUMNA DESTYLACYJNA</b></td>
+              <td>{{statD.tempDestyl_avg | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempDestyl_min | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempDestyl_max | number : '1.2-2'}}&deg;C</td>
+            </tr>
+            <tr>
+              <td><b>KOLUMNA REKTYFIKACYJNA - DÓŁ</b></td>
+              <td>{{statD.tempRektDol_avg | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempRektDol_min | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempRektDol_max | number : '1.2-2'}}&deg;C</td>
+            </tr>
+            <tr>
+              <td><b>KOLUMNA REKTYFIKACYJNA - GÓRA</b></td>
+              <td>{{statD.tempRektGora_avg | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempRektGora_min | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempRektGora_max | number : '1.2-2'}}&deg;C</td>
+            </tr>
+            <tr>
+              <td><b>SKRAPLACZ</b></td>
+              <td>{{statD.tempSkraplacz_avg | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempSkraplacz_min | number : '1.2-2'}}&deg;C</td>
+              <td>{{statD.tempSkraplacz_max | number : '1.2-2'}}&deg;C</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+</div>
+

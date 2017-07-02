@@ -9,11 +9,11 @@ import { DashboardService } from '../services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-    private thermal: any;
-    private methanol: number;
-    private worker: string;
-    private contact: string;
-    private status: boolean;
+    public thermal: any;
+    public methanol: number;
+    public worker: string;
+    public contact: string;
+    public status: boolean;
 
     constructor(private _service: DashboardService) { }
 

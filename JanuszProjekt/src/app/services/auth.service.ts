@@ -1,6 +1,8 @@
 ﻿import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+
+
+import { CookieService } from 'ngx-cookie';
 
 @Injectable()
 export class AuthService implements CanActivate {
