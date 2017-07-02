@@ -1,26 +1,62 @@
-﻿<div class="container-fluid" >
-  <div class="row">
-    <div class="span3" style="float:left">
-      <img src="../../assets/login/lock.png" width="300" height="300" alt="Generic placeholder thumbnail" (load)="toggleFlip()" [@flipState]="flip" (close)="toggleFlip()">
-    </div>
-    <div class="span3" style="float:left; margin:auto">
-      <div class="container">
-        <input class="form-control" type="email" #email style="width: 260px;" placeholder="e-mail" />
-      </div>
-      <br />
-      <div class="container">
-        <input class="form-control" type="password" #pass style="width: 260px;" placeholder="hasło" />
-      </div>
-      <br />
-      <div class="container">
-        <div style="margin-left: 0%; text-align: left">
-          <input class="btn btn-default" type="submit" style="width: 130px; border-radius: 40px;" (click)="login(email.value, pass.value)" value="LOGOWANIE" />
+﻿<!--<div class="container-fluid" >
+    <div class="row">
+        <div class="span3" style="float:left">
+            <img src="../../assets/login/lock.png" width="300" height="300" alt="Generic placeholder thumbnail" (load)="toggleFlip()" [@flipState]="flip" (close)="toggleFlip()">
         </div>
-      </div>
-  </div>
+        <div class="span3 offset-2" style="float:left; margin:auto" [@enter]>
+            <div class="container">
+                <input class="form-control" type="email" #email style="width: 260px;" placeholder="e-mail" />
+            </div>
+            <br />
+            <div class="container">
+                <input class="form-control" type="password" #pass style="width: 260px;" placeholder="hasło" />
+            </div>
+            <br />
+            <div class="container">
+                <div style="margin-left: 0%; text-align: left">
+                    <input class="btn btn-default" type="submit" style="width: 130px; border-radius: 40px;" (click)="login(email.value, pass.value)" value="LOGOWANIE" />
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    <!--<div style="margin-left: 0%; width: 25%; height: 100%; float: left; padding-top: 10%">
+</div>-->
+
+
+
+<div class="row">
+    <div class="col-xs-6 col-md-4">
+        <img src="../../assets/login/lock.png" width="300" height="300" alt="Generic placeholder thumbnail" (load)="toggleFlip()" [@flipState]="flip" (close)="toggleFlip()">
+    </div>
+    <div class="col-xs-6 col-md-4" style="margin-top: 15%" [@enter]>
+        <div class="container">
+            <input class="form-control" type="email" #email style="width: 260px;" placeholder="e-mail" />
+        </div>
+        <br />
+        <div class="container">
+            <input class="form-control" type="password" #pass style="width: 260px;" placeholder="hasło" />
+        </div>
+        <br/>
+        <div class="container">
+            <input class="btn btn-default" type="submit" style="width: 130px; border-radius: 40px;" (click)="login(email.value, pass.value)" value="LOGOWANIE" />
+        </div>
+    </div>
+  <div class="col-xs-6 col-md-4"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div style="margin-left: 0%; width: 25%; height: 100%; float: left; padding-top: 10%">
         <img src="../../assets/login/lock.png" width="300" height="300" alt="Generic placeholder thumbnail" (load)="toggleFlip()" [@flipState]="flip" (close)="toggleFlip()">
     </div>
     <div class="" style="float: left; width:30%; height: 100%; padding-top: 25%" [@enter]>
