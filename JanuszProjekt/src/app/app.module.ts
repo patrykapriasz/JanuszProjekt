@@ -18,6 +18,7 @@ import { AuthService } from './services/auth.service';
 import { LogoutComponent } from './logout/logout.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CookieModule } from 'ngx-cookie';
+import { NavMenuTopComponent } from './nav-menu-top/nav-menu-top.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CookieModule } from 'ngx-cookie';
     DashboardComponent,
     LoginComponent,
     LogoutComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    NavMenuTopComponent
   ],
   imports: [
       BrowserModule,
