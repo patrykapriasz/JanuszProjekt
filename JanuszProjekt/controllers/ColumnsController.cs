@@ -58,5 +58,11 @@ namespace JanuszProjekt.controllers
                 return Json(_repo.ColumnsDataFilter(d1,d2));
             }
         }
+
+        [HttpGet("[action]")]
+        public JsonResult MethanolChartData()
+        {
+            return Json(_repo.MethanolData());
+        }
     }
 }

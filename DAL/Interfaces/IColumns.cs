@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DAL.Models;
+using DAL.Support;
 
 namespace DAL.Interfaces
 {
@@ -11,6 +12,7 @@ namespace DAL.Interfaces
         IEnumerable<KolumnyTab> ColumnsDataFilter(DateTime date);
         IEnumerable<KolumnyTab> ColumnsDataFilter(DateTime dateS, DateTime dateK);
         //List<StatystykaModel> KolumnyStatystyka();
+        IEnumerable<Methanol> MethanolData();
 
     }
 }

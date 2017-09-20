@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DAL.Interfaces;
 using DAL.Models;
+using DAL.Support;
 
 namespace DAL.Repo
 {
@@ -33,6 +34,17 @@ namespace DAL.Repo
                     .Select(x => x)
                     .OrderByDescending(d=>d.Data);
             return list;
+        }
+
+        public IEnumerable<Methanol> MethanolData()
+        {
+            
+            return new List<Methanol>(){new Methanol()
+            {
+
+                
+            }};
+           
         }
     }
 }
