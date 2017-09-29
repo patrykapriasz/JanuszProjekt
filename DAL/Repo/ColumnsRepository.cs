@@ -38,13 +38,16 @@ namespace DAL.Repo
 
         public IEnumerable<Methanol> MethanolData()
         {
-            
-            return new List<Methanol>(){new Methanol()
-            {
+            var list = from data in _context.KolumnyTab
+                select new Methanol()
+                {
+                    Date = data.Data.Value.Date,
+                    MethanolVal = data.Metanol.Value
+                };
+            var count = _context.KolumnyTab.Count()-1;
+            list.Take(count);
+            return list;
 
-                
-            }};
-           
         }
     }
 }
