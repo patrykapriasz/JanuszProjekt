@@ -53,6 +53,13 @@ export class HomeComponent implements OnInit {
   public chartHovered(e: any): void {
       console.log(e);
   }
+
+  public randomize(): void {
+      // Only Change 3 values
+
+      this.barChartData = this.lineChartData;
+      console.log(this.barChartData);
+  }
   
 
 

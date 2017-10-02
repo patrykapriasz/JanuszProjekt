@@ -1,14 +1,16 @@
 ﻿<app-dashboard></app-dashboard>
 <p>!!!!!</p>
+<input type="text" (change)="randomize()"/>
 <div>
-  <div style="display: block">
-    <canvas baseChart height="350"
-            [datasets]="barChartData"
-            [labels]="lineChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [chartType]="barChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
-  </div>
+    <div style="display: block">
+        <canvas baseChart height="350"
+                [datasets]="barChartData"
+                [labels]="lineChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  
 </div> 
