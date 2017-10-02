@@ -13,6 +13,8 @@ namespace DAL.Interfaces
         IEnumerable<KolumnyTab> ColumnsDataFilter(DateTime dateS, DateTime dateK);
         //List<StatystykaModel> KolumnyStatystyka();
         IEnumerable<Methanol> MethanolData();
+        IEnumerable<DateTime> MethanolDateTime();
+        IEnumerable<double> MethanolStrength();
 
     }
 }

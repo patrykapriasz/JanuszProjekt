@@ -64,5 +64,17 @@ namespace JanuszProjekt.controllers
         {
             return Json(_repo.MethanolData());
         }
+
+        [HttpGet("[action]")]
+        public JsonResult MethanolDate()
+        {
+            return Json(_repo.MethanolDateTime());
+        }
+
+        [HttpGet("[action]")]
+        public JsonResult MethanolStrength()
+        {
+            return Json(_repo.MethanolStrength());
+        }
     }
 }

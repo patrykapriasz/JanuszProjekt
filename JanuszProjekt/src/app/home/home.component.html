@@ -1,4 +1,14 @@
 ﻿<app-dashboard></app-dashboard>
-<p>
-  home works!
-</p>
+<p>!!!!!</p>
+<div>
+  <div style="display: block">
+    <canvas baseChart height="350"
+            [datasets]="barChartData"
+            [labels]="lineChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+</div> 

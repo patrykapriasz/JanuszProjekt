@@ -20,6 +20,9 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { CookieModule } from 'ngx-cookie';
 import { NavMenuTopComponent } from './nav-menu-top/nav-menu-top.component';
 
+import {ChartsModule} from 'ng2-charts';
+import { ChartsComponent } from './charts/charts.component';
+
 
 @NgModule({
   declarations: [
@@ -32,12 +35,14 @@ import { NavMenuTopComponent } from './nav-menu-top/nav-menu-top.component';
     LoginComponent,
     LogoutComponent,
     StatisticsComponent,
-    NavMenuTopComponent
+    NavMenuTopComponent,
+    ChartsComponent
   ],
   imports: [
       BrowserModule,
       CookieModule.forRoot(),
       HttpModule,
+      ChartsModule,
       BrowserAnimationsModule,
       RouterModule.forRoot([
           { path: '', redirectTo: 'login', pathMatch: 'full' },

@@ -49,5 +49,19 @@ namespace DAL.Repo
             return list;
 
         }
+
+        public IEnumerable<DateTime> MethanolDateTime()
+        {
+            var list = _context.KolumnyTab.Select(x => x.Data.Value).Take(7);
+            
+            return list;
+        }
+
+        public IEnumerable<double> MethanolStrength()
+        {
+            var list = _context.KolumnyTab.Select(x => x.Metanol.Value).Take(7);
+            
+            return list;
+        }
     }
 }
