@@ -10,20 +10,22 @@ import {ChartsService} from '../services/charts.service';
 export class HomeComponent implements OnInit {
 
   constructor(private _serviceChart:ChartsService) { }
-  public lineChartData: any;
-  public lineChartLabels:any;
+  public lineChartData1: any;
+  public lineChartLabels1:any;
 
   getDateValues() {
-      this._serviceChart.getDate().subscribe(res => this.lineChartLabels = res);
+      this._serviceChart.getDate().subscribe(res => this.lineChartLabels1 = res);
   }
 
     getStrengthValues() {
-        this._serviceChart.getStrength().subscribe(res => this.lineChartData = res);
+        this._serviceChart.getStrength().subscribe(res => this.lineChartData1 = res);
+        
     }
     
   ngOnInit() {
       this.getDateValues();
       this.getStrengthValues();
+      
     }
 
     //charts
@@ -54,11 +56,56 @@ export class HomeComponent implements OnInit {
       console.log(e);
   }
 
-  public randomize(): void {
-      // Only Change 3 values
+//  public randomize(): void {
+//      // Only Change 3 values
+//      this.barChartData = this.lineChartData;
+//      console.log(this.barChartData);
+//  }
 
-      this.barChartData = this.lineChartData;
-      console.log(this.barChartData);
+
+
+    //line
+
+  public lineChartData: Array<any> = [
+      { data: [], label: 'Stężenie w ciągu dnia' }
+
+  ];
+  public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartOptions: any = {
+      responsive: true
+  };
+  public lineChartColors: Array<any> = [
+      { // grey
+          backgroundColor: 'rgba(148,159,177,0.2)',
+          borderColor: 'rgba(148,159,177,1)',
+          pointBackgroundColor: 'rgba(148,159,177,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+      },
+      { // dark grey
+          backgroundColor: 'rgba(77,83,96,0.2)',
+          borderColor: 'rgba(77,83,96,1)',
+          pointBackgroundColor: 'rgba(77,83,96,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(77,83,96,1)'
+      },
+      { // grey
+          backgroundColor: 'rgba(148,159,177,0.2)',
+          borderColor: 'rgba(148,159,177,1)',
+          pointBackgroundColor: 'rgba(148,159,177,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+      }
+  ];
+  public lineChartLegend: boolean = true;
+  public lineChartType: string = 'line';
+
+  public randomize() {
+
+      this.lineChartData = this.lineChartData1;
   }
   
 

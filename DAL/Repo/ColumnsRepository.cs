@@ -52,14 +52,14 @@ namespace DAL.Repo
 
         public IEnumerable<DateTime> MethanolDateTime()
         {
-            var list = _context.KolumnyTab.Select(x => x.Data.Value).Take(7);
+            var list = _context.KolumnyTab.Select(x => x.Data.Value).OrderByDescending(a=>a.Date).Take(5);
             
             return list;
         }
 
         public IEnumerable<double> MethanolStrength()
         {
-            var list = _context.KolumnyTab.Select(x => x.Metanol.Value).Take(7);
+            var list = _context.KolumnyTab.OrderByDescending(a=>a.Data).Select(x => x.Metanol.Value).Take(5);
             
             return list;
         }
